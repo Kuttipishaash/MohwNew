@@ -42,11 +42,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
         <activity
             android:name=".AddReportActivity"
-            android:screenOrientation="portrait">
-    </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ViewReportsActivity"></activity>
     </application>
 
 </manifest>

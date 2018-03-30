@@ -667,6 +667,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             case R.id.drawer_main_item_add_report:
                                 startActivity(new Intent(MapsActivity.this, AddReportActivity.class));
                                 break;
+                            case R.id.drawer_main_item_view_reports:
+                                startActivity(new Intent(MapsActivity.this, ViewReportsActivity.class));
+                                break;
                         }
                         return true;
                     }
