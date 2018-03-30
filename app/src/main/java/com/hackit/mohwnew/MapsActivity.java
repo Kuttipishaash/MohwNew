@@ -738,7 +738,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 int j = Integer.parseInt(f.getProperty("id")) - 1;
                 GeoJsonPolygonStyle st = new GeoJsonPolygonStyle();
                 int R = (int) (255f * (float) randV[j] / 100.0f);
-                st.setFillColor(color_int(150, R, 0, 0));
+                st.setFillColor(color_int(150, R, 255-R, 0));
                 st.setStrokeColor(color_int(150, 0, 0, 0));
                 st.setStrokeWidth(2F);
                 f.setPolygonStyle(st);
