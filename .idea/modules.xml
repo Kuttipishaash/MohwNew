@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MohwNew.iml" filepath="$PROJECT_DIR$/MohwNew.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" filepath="$PROJECT_DIR$/../../../praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" />
+      <module fileurl="file://C:\Users\praji\Desktop\praji\Desktop\Android\Sih18\MohwNew\MohwNew.iml" filepath="C:\Users\praji\Desktop\praji\Desktop\Android\Sih18\MohwNew\MohwNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/app/app.iml" filepath="$PROJECT_DIR$/../../../praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/app/app.iml" />
+      <module fileurl="file://C:\Users\praji\Desktop\praji\Desktop\Android\Sih18\MohwNew\app\app.iml" filepath="C:\Users\praji\Desktop\praji\Desktop\Android\Sih18\MohwNew\app\app.iml" />
     </modules>
   </component>
 </project>

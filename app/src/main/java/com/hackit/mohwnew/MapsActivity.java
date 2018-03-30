@@ -904,16 +904,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     public void create_addmarkers(int id)
     {
+            int height = 52;
+            int width = 52;
             G_id=id;
             for(int i=0;i<st1[G_id].length;i=i+4)
             {
-                int height = 52;
-                int width = 52;
                 BitmapDrawable bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.marker3);
                 Bitmap b=bitmapdraw.getBitmap();
                 Bitmap sm = Bitmap.createScaledBitmap(b, width, height, false);
                 BitmapDescriptor b1= BitmapDescriptorFactory.fromBitmap(sm);
-                 LatLngBounds lbs=new LatLngBounds(new LatLng(st1[id][i+2],st1[id][i+3]),new LatLng(st1[id][i],st1[id][i+1]));
+                LatLngBounds lbs=new LatLngBounds(new LatLng(st1[id][i+2],st1[id][i+3]),new LatLng(st1[id][i],st1[id][i+1]));
                 Marker m=mMap.addMarker(new MarkerOptions().position(lbs.getCenter()).title(st1s[G_id].split(",")[i/4]).icon(b1));
                 markerList[G_id][i/4]=m;
             }
@@ -921,12 +921,23 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
     public void addmarkers(int id)
     {
+        int height = 52;
+        int width = 52;
+        BitmapDrawable bitmapdraw;
         G_id=id;
             for(int i=0;i<75;++i)
             { if(markerList[G_id][i]!=null)
               {
-                markerList[G_id][i].setVisible(true);
-               }
+                  if(i%2==0)
+                      bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.marker4);
+                  else
+                      bitmapdraw=(BitmapDrawable)getResources().getDrawable(R.drawable.marker5);
+                  Bitmap b=bitmapdraw.getBitmap();
+                  Bitmap sm = Bitmap.createScaledBitmap(b, width, height, false);
+                  BitmapDescriptor b1= BitmapDescriptorFactory.fromBitmap(sm);
+                  markerList[G_id][i].setVisible(true);
+                  markerList[G_id][i].setIcon(b1);
+              }
             }
 
     }
