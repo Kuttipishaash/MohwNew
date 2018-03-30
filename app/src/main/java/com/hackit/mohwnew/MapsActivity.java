@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -687,14 +688,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                int i;
+               /* int i;
                 for (i = 0; i < 75; ++i)
                     if (markerList[G_id][i].equals(marker))
                         break;
-                i *= 4;
-                try { //LatLngBounds lbs=new LatLngBounds(new LatLng(st1[G_id][i+2],st1[G_id][i+3]),new LatLng(st1[G_id][i],st1[G_id][i+1]));
-                    //mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(lbs,0));
-                    markerList[G_id][i / 4].showInfoWindow();
+                i *= 4;*/
+               //TODO:firebase
+               String district,state;
+                try
+                {
+                    district=marker.getTitle();
+                    state=getString(getResources().getIdentifier
+                                    ("s"+(G_id+1),"string",getPackageName()));
+                    // markerList[G_id][i / 4].showInfoWindow();
                 } catch (Exception e) {
                     Log.e(" Marker click ", e.toString());
                 }
