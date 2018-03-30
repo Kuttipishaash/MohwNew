@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/gd"
+    android:background="@color/white"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -21,6 +21,7 @@
         android:ems="10"
         android:id="@+id/editText"
         android:background="?android:attr/editTextBackground"
+        android:textColor="@color/text_dark"
         android:textCursorDrawable="?android:attr/textCursorDrawable"
       />
 

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">MoHW</string>
-    <string name="title_activity_maps">    Menu</string>
+    <string name="app_name">MoHFW</string>
+    <string name="title_activity_maps">Menu</string>
     <string name="title_activity_menu">menu</string>
     <string name="button">Open</string>
 
