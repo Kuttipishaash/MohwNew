@@ -626,7 +626,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         if(getSupportActionBar()!=null)
           {
               getSupportActionBar().setTitle("MoHW Navigational Map");
-              getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.gd));
           }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
