@@ -48,10 +48,15 @@ public class LoginActivity extends AppCompatActivity {
         mSharedPreferences = getApplicationContext().getSharedPreferences(PREFERENCE_FILE, 0);
         mSharedPreferencesEditor = mSharedPreferences.edit();
 
+        boolean loggedIn = mSharedPreferences.getBoolean("login_status", false);
+        if (loggedIn) {
+            startActivity(new Intent(LoginActivity.this, MapsActivity.class));
+        }
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mLoginButton.setVisibility(View.GONE);
                 username = mUserNameEditText.getText().toString();
                 password = mPasswordEditText.getText().toString();
 
@@ -60,21 +65,26 @@ public class LoginActivity extends AppCompatActivity {
                 mDatabaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
+                        boolean loggedIn = false;
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                             if (postSnapshot.getKey().equals(username)) {
                                 User user = postSnapshot.getValue(User.class);
                                 if (user.getPassword().equals(password)) {
                                     mSharedPreferencesEditor.putString("username", username);
+                                    mSharedPreferencesEditor.putBoolean("login_status", true);
                                     mSharedPreferencesEditor.apply();
                                     Toast.makeText(LoginActivity.this, "Logged in as " + user.getName(), Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(LoginActivity.this, MapsActivity.class));
                                     finish();
                                 } else {
+                                    mLoginButton.setVisibility(View.VISIBLE);
                                     Toast.makeText(LoginActivity.this, "Incorrect Password", Toast.LENGTH_SHORT).show();
                                 }
                             }
-
-
+                        }
+                        if (!loggedIn) {
+                            Toast.makeText(LoginActivity.this, "Incorrect Username", Toast.LENGTH_SHORT).show();
+                            mLoginButton.setVisibility(View.VISIBLE);
                         }
                     }
 
