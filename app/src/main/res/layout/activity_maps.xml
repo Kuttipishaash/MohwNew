@@ -41,6 +41,15 @@
         android:fitsSystemWindows="true"
         map:headerLayout="@layout/nav_header_main"
         />
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        />
+
 
 </android.support.v4.widget.DrawerLayout>
 <!--map:menu="@menu/drawer_view" map:itemTextColor="@color/text"-->
