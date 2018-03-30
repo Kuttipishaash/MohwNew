@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.app.ProgressDialog;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -57,6 +58,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mLoginButton.setVisibility(View.GONE);
+                final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
+                        R.style.Theme_AppCompat_DayNight_Dialog_Alert);
+                progressDialog.setIndeterminate(true);
+                progressDialog.setMessage("Authenticating...");
+                progressDialog.show();
                 username = mUserNameEditText.getText().toString();
                 password = mPasswordEditText.getText().toString();
 
