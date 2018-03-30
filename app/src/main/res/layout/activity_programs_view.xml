@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.hackit.mohwnew.ProgramsViewActivity">
 
+    <ListView
+        android:id="@+id/list_view_programs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/progress_view_programs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
 </android.support.constraint.ConstraintLayout>
