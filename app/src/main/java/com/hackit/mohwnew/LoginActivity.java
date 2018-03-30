@@ -65,11 +65,12 @@ public class LoginActivity extends AppCompatActivity {
                 mDatabaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        boolean loggedIn = false;
+                        boolean loggedInStatus = false;
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                             if (postSnapshot.getKey().equals(username)) {
                                 User user = postSnapshot.getValue(User.class);
                                 if (user.getPassword().equals(password)) {
+                                    loggedInStatus = true;
                                     mSharedPreferencesEditor.putString("username", username);
                                     mSharedPreferencesEditor.putBoolean("login_status", true);
                                     mSharedPreferencesEditor.apply();
@@ -82,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         }
-                        if (!loggedIn) {
+                        if (!loggedInStatus) {
                             Toast.makeText(LoginActivity.this, "Incorrect Username", Toast.LENGTH_SHORT).show();
                             mLoginButton.setVisibility(View.VISIBLE);
                         }
