@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "369205083350",
+    "firebase_url": "https://mohfw-d9732.firebaseio.com",
+    "project_id": "mohfw-d9732",
+    "storage_bucket": "mohfw-d9732.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:369205083350:android:d8022890f12c35fd",
+        "android_client_info": {
+          "package_name": "com.hackit.mohwnew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "369205083350-6ni4vk7pl46lbkh8sbbn5v0da8hb82v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxk8-lgIdqw3UzN1s06OAONLYQ_gvf398"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
