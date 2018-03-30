@@ -38,9 +38,9 @@ public class ProgramsAdapter extends ArrayAdapter<Program> {
         mTitle.setText(program.getTitle());
         mUnder.setText(program.getUnder());
         mDescription.setText(program.getDescription());
-        mCompleted.setText(program.getCompleted());
-        mCompletionRate.setText(Float.toString(program.getCompletionRate()));
-        mTotal.setText(program.getTotal());
+        mCompleted.setText(Integer.toString(program.getCompleted()));
+        mCompletionRate.setText(String.valueOf(program.getCompletionRate()));
+        mTotal.setText(Integer.toString(program.getTotal()));
         return view;
     }
 }

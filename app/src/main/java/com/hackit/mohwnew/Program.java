@@ -6,7 +6,7 @@ package com.hackit.mohwnew;
 
 public class Program {
     int completed;
-    float completionRate;
+    float completion_rate;
     String description;
     String title;
     int total;
@@ -16,7 +16,7 @@ public class Program {
 
     public Program(int completed, float completion_rate, String description, String title, int total, String under) {
         this.completed = completed;
-        this.completionRate = completion_rate;
+        this.completion_rate = completion_rate;
         this.description = description;
         this.title = title;
         this.total = total;
@@ -32,11 +32,11 @@ public class Program {
     }
 
     public float getCompletionRate() {
-        return completionRate;
+        return completion_rate;
     }
 
     public void setCompletionRate(float completionRate) {
-        this.completionRate = completionRate;
+        this.completion_rate = completionRate;
     }
 
     public String getDescription() {
