@@ -48,7 +48,8 @@
             android:screenOrientation="portrait" />
         <activity android:name=".ViewReportsActivity" />
         <activity android:name=".FeedBack" />
-        <activity android:name=".ProgramsViewActivity"></activity>
+        <activity android:name=".ProgramsViewActivity" />
+        <activity android:name=".ProgramStateViewActivity"></activity>
     </application>
 
 </manifest>
