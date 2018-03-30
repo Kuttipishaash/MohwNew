@@ -19,7 +19,7 @@
         android:id="@+id/menu_open"
         android:icon="@android:drawable/ic_search_category_default"
         android:title=""
-        map:showAsAction="always"
+        map:showAsAction="collapseActionView|always"
         android:orderInCategory="0"/>
 
 </menu>
