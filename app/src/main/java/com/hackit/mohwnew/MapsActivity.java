@@ -659,6 +659,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {}
 
         defaultView(null);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds
+                (new LatLngBounds(new LatLng(6.4626999, 68.1097),
+                        new LatLng(35.5087008, 97.3953586)),20));
 
         //creating markers only and removing them immediately
         for(int i=0;i<st1s.length;++i)
