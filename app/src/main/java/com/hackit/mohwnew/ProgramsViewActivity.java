@@ -1,8 +1,10 @@
 package com.hackit.mohwnew;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
@@ -61,6 +63,22 @@ public class ProgramsViewActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+
+        mProgramsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Program clickedProgram = mProgramAdapter.getItem(position);
+
+                Intent intent = new Intent(getBaseContext(), ProgramStateViewActivity.class);
+                intent.putExtra("title", clickedProgram.getTitle());
+                intent.putExtra("completed", Integer.toString(clickedProgram.getCompleted()));
+                intent.putExtra("completion_rate", Float.toString(clickedProgram.getCompletionRate()));
+                intent.putExtra("description", clickedProgram.getDescription());
+                intent.putExtra("total", Integer.toString(clickedProgram.getTotal()));
+                intent.putExtra("under", clickedProgram.getUnder());
+                startActivity(intent);
             }
         });
     }
