@@ -43,6 +43,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Login"></activity>
+        <activity
+            android:name=".AddReportActivity"
+            android:screenOrientation="portrait">
+    </activity>
     </application>
 
 </manifest>
