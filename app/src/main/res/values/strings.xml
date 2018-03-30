@@ -1,65 +1,6 @@
 <resources>
     <string name="app_name">MoHFW</string>
-    <string name="title_activity_maps">Menu</string>
-    <string name="title_activity_menu">menu</string>
-    <string name="button">Open</string>
-
-    <string name="s1">Andhra Pradesh</string>
-    <string name="s1d1">Anantapur</string>
-    <string name="s1d2">Chittoor</string>
-    <string name="s1d3">East Godavari</string>
-    <string name="s1d4">Guntur</string>
-    <string name="s1d5">Krishna</string>
-    <string name="s1d6">Kurnool</string>
-    <string name="s1d7">Prakasam</string>
-    <string name="s1d8">Srikakulam</string>
-    <string name="s1d9">Sri Potti Sriramulu Nellore</string>
-    <string name="s1d10">Visakhapatnam</string>
-    <string name="s1d11">Vizianagaram</string>
-    <string name="s1d12">West Godavari</string>
-    <string name="s1d13">Kadapa</string>
-
-    <string name="s2">Arunachal Pradesh</string>
-    <string name="s3">Assam</string>
-    <string name="s4">Bihar</string>
-    <string name="s5">Chhattisgarh</string>
-    <string name="s6">Goa</string>
-    <string name="s7">Gujarat</string>
-    <string name="s8">Haryana</string>
-    <string name="s9">Himachal Pradesh</string>
-    <string name="s10">Jammu and Kashmir</string>
-    <string name="s11">Jharkhand</string>
-    <string name="s12">Karnataka</string>
-    <string name="s13">Kerala</string>
-    <string name="s14">Madhya Pradesh</string>
-    <string name="s15">Maharashtra</string>
-    <string name="s16">Manipur</string>
-    <string name="s17">Meghalaya</string>
-    <string name="s18">Mizoram</string>
-    <string name="s19">Nagaland</string>
-    <string name="s20">Odisha</string>
-    <string name="s21">Punjab</string>
-    <string name="s22">Rajasthan</string>
-    <string name="s23">Sikkim</string>
-    <string name="s24">Tamil Nadu</string>
-    <string name="s25">Telangana</string>
-    <string name="s26">Tripura</string>
-    <string name="s27">Uttar Pradesh</string>
-    <string name="s28">Uttarakhand</string>
-    <string name="s29">WestBengal</string>
-    <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">This email address is invalid</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_incorrect_password">This password is incorrect</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."
-    </string>
 
 </resources>

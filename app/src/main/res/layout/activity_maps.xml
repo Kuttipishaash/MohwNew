@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,27 +10,38 @@
     tools:context="com.hackit.mohwnew.MapsActivity">
 
     <fragment
-       android:id="@+id/map"
-       android:name="com.google.android.gms.maps.SupportMapFragment"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       tools:context="com.hackit.mohwnew.MapsActivity" />
-
-    <LinearLayout
-        android:id="@+id/image"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        tools:context="com.hackit.mohwnew.MapsActivity" />
+
+    <RelativeLayout
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <View
             android:id="@+id/bar"
             android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:visibility="gone"
             android:background="@drawable/scan_draw"
-            />
+            android:visibility="gone" />
 
-    </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_view_list_black_24dp"
+            android:tint="@color/white"
+            map:fabSize="normal"
+            map:rippleColor="@color/colorPrimaryDark" />
+
+
+    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -40,20 +50,18 @@
         android:layout_gravity="end"
         android:background="@color/white"
         android:fitsSystemWindows="true"
-        map:headerLayout="@layout/nav_header_main"
-        />
+        map:headerLayout="@layout/nav_header_main" />
+
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"
         android:layout_gravity="start"
+        android:layout_marginTop="?android:attr/actionBarSize"
         android:background="@color/white"
         android:fitsSystemWindows="false"
         app:headerLayout="@layout/nav_header_main_left"
-        app:menu="@menu/main_drawer_view"
-        />
+        app:menu="@menu/main_drawer_view" />
 
 
-</android.support.v4.widget.DrawerLayout>
-<!--map:menu="@menu/drawer_view" map:itemTextColor="@color/text"-->
+</android.support.v4.widget.DrawerLayout><!--map:menu="@menu/drawer_view" map:itemTextColor="@color/text"-->
