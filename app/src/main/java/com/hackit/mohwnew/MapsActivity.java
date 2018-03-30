@@ -656,24 +656,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }catch(Exception e){Log.e("Animation",e.toString());}
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         mDrawerLayout.setScrimColor(Color.TRANSPARENT);
-        navigationView = (NavigationView)findViewById(R.id.nav_view);
-        navigationView.getBackground().setAlpha(125);
+        navigationView = (NavigationView)findViewById(R.id.nav_view2);
         navigationView.setItemBackgroundResource(R.drawable.menu_items);
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem item) {
                         // set item as selected to persist highlight
-                        item.setChecked(true);
-                      /*  String[] idd = getResources().getResourceName(item.getItemId()).split("\\/");
-                        if(idd[1].contains("st"))
-                        {
-                            focus(item,-1);
-                            Menu m=navigationView.getMenu();
-                            m.setGroupVisible(R.id.mgp,false);
-                            int id=b[Integer.parseInt(idd[1].substring(2))-1];
-                            m.setGroupVisible(id,true);
-                        }*/
+                        //item.setChecked(true);
+                        switch (item.getItemId()) {
+                            case R.id.drawer_main_item_add_report:
+                                startActivity(new Intent(MapsActivity.this, AddReportActivity.class));
+                                break;
+                        }
                         return true;
                     }
                 });
