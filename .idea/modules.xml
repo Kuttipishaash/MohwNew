@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MoHFW.iml" filepath="$PROJECT_DIR$/MoHFW.iml" />
       <module fileurl="file://$PROJECT_DIR$/MohwNew.iml" filepath="$PROJECT_DIR$/MohwNew.iml" />
       <module fileurl="file://F:/praji/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" filepath="F:/praji/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" />
       <module fileurl="file://F:/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" filepath="F:/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" />
