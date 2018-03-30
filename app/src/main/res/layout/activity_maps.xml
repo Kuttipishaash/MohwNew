@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.hackit.mohwnew.MapsActivity">
+
+    <fragment
+       android:id="@+id/map"
+       android:name="com.google.android.gms.maps.SupportMapFragment"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       tools:context="com.hackit.mohwnew.MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <View
+            android:id="@+id/bar"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@drawable/scan_draw"
+            />
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        map:headerLayout="@layout/nav_header_main"
+        />
+
+</android.support.v4.widget.DrawerLayout>
+<!--map:menu="@menu/drawer_view" map:itemTextColor="@color/text"-->
