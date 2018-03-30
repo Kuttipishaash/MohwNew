@@ -49,7 +49,7 @@
         android:layout_gravity="start"
         android:background="@color/white"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
+        app:headerLayout="@layout/nav_header_main_left"
         app:menu="@menu/main_drawer_view"
         />
 
