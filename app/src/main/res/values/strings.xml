@@ -5,19 +5,19 @@
     <string name="button">Open</string>
 
     <string name="s1">Andhra Pradesh</string>
-        <string name="s1d1">Anantapur</string>
-        <string name="s1d2">Chittoor</string>
-        <string name="s1d3">East Godavari</string>
-        <string name="s1d4">Guntur</string>
-        <string name="s1d5">Krishna</string>
-        <string name="s1d6">Kurnool</string>
-        <string name="s1d7">Prakasam</string>
-        <string name="s1d8">Srikakulam</string>
-        <string name="s1d9">Sri Potti Sriramulu Nellore</string>
-        <string name="s1d10">Visakhapatnam</string>
-        <string name="s1d11">Vizianagaram</string>
-        <string name="s1d12">West Godavari</string>
-        <string name="s1d13">Kadapa</string>
+    <string name="s1d1">Anantapur</string>
+    <string name="s1d2">Chittoor</string>
+    <string name="s1d3">East Godavari</string>
+    <string name="s1d4">Guntur</string>
+    <string name="s1d5">Krishna</string>
+    <string name="s1d6">Kurnool</string>
+    <string name="s1d7">Prakasam</string>
+    <string name="s1d8">Srikakulam</string>
+    <string name="s1d9">Sri Potti Sriramulu Nellore</string>
+    <string name="s1d10">Visakhapatnam</string>
+    <string name="s1d11">Vizianagaram</string>
+    <string name="s1d12">West Godavari</string>
+    <string name="s1d13">Kadapa</string>
 
     <string name="s2">Arunachal Pradesh</string>
     <string name="s3">Assam</string>
