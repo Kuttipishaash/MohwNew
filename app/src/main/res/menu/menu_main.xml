@@ -4,20 +4,14 @@
     xmlns:map="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/programmes"
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title=""
-        map:showAsAction="always"
-        android:orderInCategory="0" />
-    <item
         android:id="@+id/back_button"
-        android:icon="@android:drawable/ic_menu_revert"
+        android:icon="@drawable/ic_my_location_white_24dp"
         android:title=""
         map:showAsAction="always"
         android:orderInCategory="0"/>
     <item
         android:id="@+id/menu_open"
-        android:icon="@android:drawable/ic_search_category_default"
+        android:icon="@drawable/ic_search_white_24dp"
         android:title=""
         map:showAsAction="collapseActionView|always"
         android:orderInCategory="0"/>
