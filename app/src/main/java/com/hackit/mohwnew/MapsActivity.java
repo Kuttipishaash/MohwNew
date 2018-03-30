@@ -697,10 +697,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                String district,state;
                 try
                 {
-                    district=marker.getTitle();
-                    state=getString(getResources().getIdentifier
-                                    ("s"+(G_id+1),"string",getPackageName()));
-                    // markerList[G_id][i / 4].showInfoWindow();
+                   // district=marker.getTitle();
+                   // state=getString(getResources().getIdentifier
+                     //               ("s"+(G_id+1),"string",getPackageName()));
+                   marker.showInfoWindow();
                 } catch (Exception e) {
                     Log.e(" Marker click ", e.toString());
                 }
