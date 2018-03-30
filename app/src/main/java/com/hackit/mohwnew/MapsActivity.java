@@ -37,6 +37,7 @@ import com.google.maps.android.geojson.GeoJsonLayer;
 import com.google.maps.android.geojson.GeoJsonPolygonStyle;
 
 import java.util.Iterator;
+import java.util.Random;
 
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -686,15 +687,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {
         }
 
-        defaultView(null);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds
-                (new LatLngBounds(new LatLng(6.4626999, 68.1097),
-                        new LatLng(35.5087008, 97.3953586)), 20));
-
         //creating markers only and removing them immediately
         for (int i = 0; i < st1s.length; ++i)
             create_addmarkers(i);
         removeMarkers();
+
+        defaultView(null);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngBounds
+                (new LatLngBounds(new LatLng(6.4626999, 68.1097),
+                        new LatLng(35.5087008, 97.3953586)), 20));
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
@@ -723,7 +724,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void defaultView(MenuItem item) {
         clearAll_Layers_Except(-1);
         removeMarkers();
-
+        updateRandV();
         try {
             if (item == null) {
                 layers[0] = new GeoJsonLayer(mMap, a, getApplicationContext());
@@ -778,7 +779,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 int j = Integer.parseInt(f.getProperty("id")) - 1;
                 GeoJsonPolygonStyle st = new GeoJsonPolygonStyle();
                 if (j == ind) {
-                    st.setFillColor(color_int(150, 255, 0, 0));
+                    int R = (int) (255f * (float) randV[j] / 100.0f);
+                    st.setFillColor(color_int(150, R, 255-R, 0));
                     st.setStrokeColor(color_int(150, 0, 0, 0));
                     st.setStrokeWidth(2F);
                     f.setPolygonStyle(st);
@@ -895,6 +897,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void create_addmarkers(int id) {
         int height = 52;
         int width = 52;
+        String snip="";
         G_id = id;
         for (int i = 0; i < st1[G_id].length; i = i + 4) {
             BitmapDrawable bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker3);
@@ -902,7 +905,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             Bitmap sm = Bitmap.createScaledBitmap(b, width, height, false);
             BitmapDescriptor b1 = BitmapDescriptorFactory.fromBitmap(sm);
             LatLngBounds lbs = new LatLngBounds(new LatLng(st1[id][i + 2], st1[id][i + 3]), new LatLng(st1[id][i], st1[id][i + 1]));
-            Marker m = mMap.addMarker(new MarkerOptions().position(lbs.getCenter()).title(st1s[G_id].split(",")[i / 4]).icon(b1));
+            if(new Random().nextInt(101)>55)
+                snip="Y";
+            else
+                snip="N";
+            Marker m = mMap.addMarker(new MarkerOptions().position(lbs.getCenter()).title(st1s[G_id].split(",")[i / 4]).icon(b1).snippet(snip));
             markerList[G_id][i / 4] = m;
         }
 
@@ -915,7 +922,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         G_id = id;
         for (int i = 0; i < 75; ++i) {
             if (markerList[G_id][i] != null) {
-                if (i % 2 == 0)
+                if (markerList[G_id][i].getSnippet().equals("N"))
                     bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker4);
                 else
                     bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.marker5);
@@ -938,6 +945,27 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         }
 
+    }
+
+    public void updateRandV()
+    { float fc,tc;
+        for (int i = 0; i < 29; ++i) {
+           fc=0;tc=0;
+            for (int j = 0; j < 75; ++j)
+            {
+                if (markerList[i][j] != null)
+                {
+                    String s=markerList[i][j].getSnippet();
+                    if(s.equals("N"))
+                      ++fc;
+                    ++tc;
+                }
+            }
+            if(tc==0)
+                randV[i]=100;
+            else
+                randV[i]=(int)(100.0f*(fc/tc));
+        }
     }
 
 }
