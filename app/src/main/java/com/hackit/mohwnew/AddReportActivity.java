@@ -33,6 +33,7 @@ public class AddReportActivity extends AppCompatActivity {
         mTitleField.requestFocus();
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.keepSynced(true);
 
         mSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
