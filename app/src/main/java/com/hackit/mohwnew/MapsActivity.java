@@ -12,13 +12,14 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ActionMenuView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -596,7 +597,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("MoHW Navigational Map");
+            getSupportActionBar().setTitle("MoHFW Navigational Map");
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.hb);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -685,15 +688,16 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {
         }
 
+        //creating markers only and removing them immediately
+        for (int i = 0; i < st1s.length; ++i)
+            create_addmarkers(i);
+        removeMarkers();
+
         defaultView(null);
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds
                 (new LatLngBounds(new LatLng(6.4626999, 68.1097),
                         new LatLng(35.5087008, 97.3953586)), 20));
 
-        //creating markers only and removing them immediately
-        for (int i = 0; i < st1s.length; ++i)
-            create_addmarkers(i);
-        removeMarkers();
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
@@ -703,6 +707,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     if (markerList[G_id][i].equals(marker))
                         break;
                 i *= 4;*/
+                marker.showInfoWindow();
                 getDistrictProgramDetails(G_id, marker);
                 return true;
             }
@@ -710,7 +715,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void getDistrictProgramDetails(int g_id, Marker marker) {
-
         String district, state;
         try {
             district = marker.getTitle();
@@ -819,7 +823,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         int id = item.getItemId();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         //noinspection SimplifiableIfStatement
-        if (id == R.id.menu_open) {
+        if (id == android.R.id.home)
+        {
+            if (drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else
+                drawer.openDrawer(GravityCompat.START);
+            return true;
+        }
+        else if (id == R.id.menu_open) {
             if (drawer.isDrawerOpen(GravityCompat.END)) {
                 drawer.closeDrawer(GravityCompat.END);
             } else
