@@ -1,6 +1,14 @@
 package com.hackit.mohwnew;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +16,14 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.hackit.mohwnew.Data.UserLocation;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
 
 public class IssuesActivity extends AppCompatActivity {
 
@@ -66,6 +82,9 @@ public class IssuesActivity extends AppCompatActivity {
     private TextView mQuestionTextView9;
     private TextView mQuestionTextView10;
 
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference reference;
+    private UserLocation userLocation;
     private String issues[] = new String[10];
 
 
@@ -75,6 +94,10 @@ public class IssuesActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Feedback");
         }
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        reference = firebaseDatabase.getReference("locations");
+
         setContentView(R.layout.activity_issues);
         initViews();
         mRadioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -233,6 +256,35 @@ public class IssuesActivity extends AppCompatActivity {
                 for (int i = 0; i < 10; i++) {
                     Log.e("FeedbackActivity", "Answer of qstn " + (i + 1) + " is : " + issues[i]);
                 }
+                if (ActivityCompat.checkSelfPermission(IssuesActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(IssuesActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(IssuesActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+                    return;
+                } else {
+                    // instantiate the location manager, note you will need to request permissions in your manifest
+                    LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                    // get the last know location from your location manager.
+
+                    Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    double lat = location.getLatitude();
+                    double lng = location.getLongitude();
+                    // now get the lat/lon from the location and do something with it.
+                    Geocoder gcd = new Geocoder(getApplicationContext(), Locale.getDefault());
+                    userLocation = new UserLocation();
+                    userLocation.setLat(lat);
+                    userLocation.setLng(lng);
+                    reference.push().setValue(userLocation);
+                    try {
+                        List<Address> addresses = gcd.getFromLocation(lat, lng, 1);
+                        if (addresses.size() > 0) {
+                            Log.e("User_location", "Place is : " + addresses.get(0).getLocality());
+                        } else {
+                            Log.e("User_location", "lat : " + lat + "long" + lng + " Place Name : " + addresses.get(0).getLocality());
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
         });
 
