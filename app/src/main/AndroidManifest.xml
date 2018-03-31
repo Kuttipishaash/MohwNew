@@ -16,7 +16,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="RMV"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -47,6 +47,7 @@
             android:name=".AddReportActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ViewReportsActivity" />
+        <activity android:name=".DistrictProgramsActivity"></activity>
         <activity android:name=".FeedBack" />
         <activity android:name=".ProgramsViewActivity" />
         <activity android:name=".ProgramStateViewActivity"></activity>

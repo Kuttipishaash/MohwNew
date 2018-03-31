@@ -1,7 +1,7 @@
 package com.hackit.mohwnew;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hackit.mohwnew.Data.Report;
 
 public class AddReportActivity extends AppCompatActivity {
 
@@ -24,10 +25,10 @@ public class AddReportActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_report);
 
-        mTitleField = (EditText) findViewById(R.id.et_report_title);
-        mDescField = (EditText) findViewById(R.id.et_report_description);
-        mProgramNameField = (EditText) findViewById(R.id.et_report_program);
-        mSubmitButton = (Button) findViewById(R.id.btn_report_submit);
+        mTitleField = findViewById(R.id.et_report_title);
+        mDescField = findViewById(R.id.et_report_description);
+        mProgramNameField = findViewById(R.id.et_report_program);
+        mSubmitButton = findViewById(R.id.btn_report_submit);
 
         mTitleField.requestFocus();
 

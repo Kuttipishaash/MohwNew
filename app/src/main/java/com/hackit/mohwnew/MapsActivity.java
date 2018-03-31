@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,7 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -37,7 +35,6 @@ import com.google.maps.android.geojson.GeoJsonLayer;
 import com.google.maps.android.geojson.GeoJsonPolygonStyle;
 
 import java.util.Iterator;
-import java.util.Random;
 
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -49,7 +46,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private UiSettings mUiSettings;
     private DrawerLayout mDrawerLayout;
-    private FloatingActionButton floatingActionButton;
     /*private double latAlngs[]={15.9128998,79.7399875, 28.2179994,94.7277528, 26.2006043,92.9375739, 25.0960742,85.3131193,
             21.2786567,81.8661441, 15.2993265,74.1239959, 22.258652,71.1923805, 29.0587757,76.085601, 31.1048294,77.1733900,
             33.778175,76.57617139, 23.6101808,85.2799354, 15.3172775,75.7138884, 10.8505159,76.2710833, 22.9734229,78.6568942,
@@ -628,15 +624,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Exception e) {
             Log.e("Animation", e.toString());
         }
-
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this, ProgramsViewActivity.class));
-            }
-        });
-
         mDrawerLayout = findViewById(R.id.drawer_layout);
         mDrawerLayout.setScrimColor(Color.TRANSPARENT);
         navigationView = findViewById(R.id.nav_view2);
@@ -687,15 +674,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         } catch (Resources.NotFoundException e) {
         }
 
-        //creating markers only and removing them immediately
-        for (int i = 0; i < st1s.length; ++i)
-            create_addmarkers(i);
-        removeMarkers();
-
         defaultView(null);
         mMap.moveCamera(CameraUpdateFactory.newLatLngBounds
                 (new LatLngBounds(new LatLng(6.4626999, 68.1097),
                         new LatLng(35.5087008, 97.3953586)), 20));
+
+        //creating markers only and removing them immediately
+        for (int i = 0; i < st1s.length; ++i)
+            create_addmarkers(i);
+        removeMarkers();
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
@@ -705,20 +692,28 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     if (markerList[G_id][i].equals(marker))
                         break;
                 i *= 4;*/
-               //TODO:firebase
-               String district,state;
-                try
-                {
-                   // district=marker.getTitle();
-                   // state=getString(getResources().getIdentifier
-                     //               ("s"+(G_id+1),"string",getPackageName()));
-                   marker.showInfoWindow();
-                } catch (Exception e) {
-                    Log.e(" Marker click ", e.toString());
-                }
+                getDistrictProgramDetails(G_id, marker);
                 return true;
             }
         });
+    }
+
+    private void getDistrictProgramDetails(int g_id, Marker marker) {
+
+        String district, state;
+        try {
+            district = marker.getTitle();
+            state = getString(getResources().getIdentifier
+                    ("s" + (g_id + 1), "string", getPackageName()));
+            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(PREFERENCE_FILE, 0);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("state", state);
+            editor.putString("district", district);
+            editor.apply();
+            startActivity(new Intent(MapsActivity.this, DistrictProgramsActivity.class));
+        } catch (Exception e) {
+            Log.e(" Marker click ", e.toString());
+        }
     }
 
     public void defaultView(MenuItem item) {

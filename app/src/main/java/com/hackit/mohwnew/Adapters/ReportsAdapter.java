@@ -1,4 +1,4 @@
-package com.hackit.mohwnew;
+package com.hackit.mohwnew.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.hackit.mohwnew.Data.Report;
+import com.hackit.mohwnew.R;
+
 import java.util.List;
 
 /**

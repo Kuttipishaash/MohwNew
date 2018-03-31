@@ -1,4 +1,4 @@
-package com.hackit.mohwnew;
+package com.hackit.mohwnew.Data;
 
 public class User {
     private String name;

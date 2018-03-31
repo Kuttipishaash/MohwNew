@@ -1,5 +1,6 @@
 package com.hackit.mohwnew;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,13 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.app.ProgressDialog;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.hackit.mohwnew.Data.User;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -52,6 +53,8 @@ public class LoginActivity extends AppCompatActivity {
         boolean loggedIn = mSharedPreferences.getBoolean("login_status", false);
         if (loggedIn) {
             startActivity(new Intent(LoginActivity.this, MapsActivity.class));
+            //TODO:Crash when finish is used
+            //finish();
         }
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {

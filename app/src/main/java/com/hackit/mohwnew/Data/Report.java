@@ -1,4 +1,4 @@
-package com.hackit.mohwnew;
+package com.hackit.mohwnew.Data;
 
 /**
  * Created by praji on 30-Mar-18.
