@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -598,7 +599,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_maps);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("MoHFW Navigational Map");
-            getSupportActionBar().setHomeAsUpIndicator(R.drawable.hb);
+            getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -654,6 +655,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                                 break;
                             case R.id.drawer_main_item_view_reports:
                                 startActivity(new Intent(MapsActivity.this, ViewReportsActivity.class));
+                                break;
+                            case R.id.drawer_main_item_visit_website:
+                                Uri uri = Uri.parse("https://mohfw.gov.in/"); // missing 'http://' will cause crashed
+                                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                startActivity(intent);
+                                break;
+                            case R.id.drawer_main_item_about:
+                                startActivity(new Intent(MapsActivity.this, AboutUsActivity.class));
                                 break;
                             case R.id.drawer_main_item_log_out:
                                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(PREFERENCE_FILE, 0);

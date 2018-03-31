@@ -29,14 +29,12 @@ public class DistrictProgramsAdapter extends ArrayAdapter<DistrictProgram> {
         TextView mTitleText = view.findViewById(R.id.tv_title_adpli);
         TextView mDescriptionText = view.findViewById(R.id.tv_desc_adpli);
 //        TextView mPercentText = view.findViewById(R.id.tv_complete_percent_adpli);
-        CheckBox mCompletedCheckBox = view.findViewById(R.id.cb_program_status_adpli);
 
 
         DistrictProgram districtProgram = getItem(position);
         mTitleText.setText(districtProgram.getTitle());
         mDescriptionText.setText(districtProgram.getDescription());
 //            mPercentText.setText(districtProgram.getCompletion_rate() + "");
-        mCompletedCheckBox.setChecked(districtProgram.isCompletionStatus());
 
         return view;
     }
