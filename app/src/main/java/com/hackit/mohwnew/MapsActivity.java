@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -35,6 +36,7 @@ import com.google.maps.android.geojson.GeoJsonLayer;
 import com.google.maps.android.geojson.GeoJsonPolygonStyle;
 
 import java.util.Iterator;
+import java.util.Random;
 
 
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -46,6 +48,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     private UiSettings mUiSettings;
     private DrawerLayout mDrawerLayout;
+    private FloatingActionButton fab;
+
     /*private double latAlngs[]={15.9128998,79.7399875, 28.2179994,94.7277528, 26.2006043,92.9375739, 25.0960742,85.3131193,
             21.2786567,81.8661441, 15.2993265,74.1239959, 22.258652,71.1923805, 29.0587757,76.085601, 31.1048294,77.1733900,
             33.778175,76.57617139, 23.6101808,85.2799354, 15.3172775,75.7138884, 10.8505159,76.2710833, 22.9734229,78.6568942,
@@ -599,6 +603,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MapsActivity.this, ProgramsViewActivity.class));
+            }
+        });
 
         try {
             final View bar = findViewById(R.id.bar);
