@@ -2,6 +2,7 @@ package com.hackit.mohwnew;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -86,20 +87,54 @@ public class IssuesActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private UserLocation userLocation;
     private String issues[] = new String[10];
+    private String questionSet1[] = {
+            "Does the child have difficulty seeing either during the day or night?",
+            "Does the child have any difficulty in speaking compared to other children of his/her age?",
+            "Does the child have difficulty in sustaining attention on activities at school, home or play?",
+            "Does the child have difficulty in learning new things?",
+            "Does the child find it difficult to read or write?",
+            "Does the child find it difficult to do simple calculations?",
+            "From birth till date, has the child ever had fits?",
+            "Does the child have stiffness in his/her arms/legs?",
+            "Does the child have floppiness in his/her arms/legs?",
+            "Does the child have itching on skin especially at night?"
+    };
+    private String questionSet2[] = {
+            "Was any fever case found positive for malaria last month?",
+            "Have you obtained bed nets?",
+            "Were you immunized against Cholera?",
+            "Were you made aware of how to control Dengue?",
+            "Do you have proper toilets in your home?",
+            "Does your locality face water clogging problems during rains?",
+            "Do you get proper drinking water in your homes?",
+            "Is the government hospitals in your locality hygenic?",
+            "Is the food provided in nurseries nutritious?",
+            "Is drainage systems proper in your area?"
+    };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("Feedback");
+            getSupportActionBar().setTitle("Survey");
         }
+
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         reference = firebaseDatabase.getReference("locations");
 
         setContentView(R.layout.activity_issues);
         initViews();
+
+        Intent intent = getIntent();
+        int pos = intent.getIntExtra("position", 0);
+        if (pos % 2 == 0) {
+            setQuestions(questionSet1);
+        } else {
+            setQuestions(questionSet2);
+        }
+
         mRadioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -288,6 +323,19 @@ public class IssuesActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void setQuestions(String[] questionSet) {
+        mQuestionTextView1.setText(questionSet[0]);
+        mQuestionTextView2.setText(questionSet[1]);
+        mQuestionTextView3.setText(questionSet[2]);
+        mQuestionTextView4.setText(questionSet[3]);
+        mQuestionTextView5.setText(questionSet[4]);
+        mQuestionTextView6.setText(questionSet[5]);
+        mQuestionTextView7.setText(questionSet[6]);
+        mQuestionTextView8.setText(questionSet[7]);
+        mQuestionTextView9.setText(questionSet[8]);
+        mQuestionTextView10.setText(questionSet[9]);
     }
 
     private void initViews() {

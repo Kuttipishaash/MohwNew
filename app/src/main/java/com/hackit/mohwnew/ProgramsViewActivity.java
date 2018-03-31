@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -82,7 +81,7 @@ public class ProgramsViewActivity extends AppCompatActivity {
                 Intent intent = new Intent(getBaseContext(), ProgramStateViewActivity.class);
                 intent.putExtra("title", clickedProgram.getTitle());
                 intent.putExtra("id",  programIds.get(position));
-                Toast.makeText(ProgramsViewActivity.this, programIds.get(position) + "", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ProgramsViewActivity.this, programIds.get(position) + "", Toast.LENGTH_SHORT).show();
 /*                intent.putExtra("completed", Integer.toString(clickedProgram.getCompleted()));
                 intent.putExtra("completion_rate", Float.toString(clickedProgram.getCompletionRate()));
                 intent.putExtra("description", clickedProgram.getDescription());
