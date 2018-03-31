@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_white"
     tools:context="com.hackit.mohwnew.ProgramsViewActivity">
 
     <ListView
         android:id="@+id/list_view_programs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        android:divider="@color/dark_white"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="false"
+        android:dividerHeight="1dp"/>
 
     <ProgressBar
         android:id="@+id/progress_view_programs"
