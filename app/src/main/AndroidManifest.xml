@@ -47,10 +47,12 @@
             android:name=".AddReportActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".ViewReportsActivity" />
-        <activity android:name=".DistrictProgramsActivity"></activity>
+        <activity android:name=".DistrictProgramsActivity" />
         <activity android:name=".FeedBack" />
         <activity android:name=".ProgramsViewActivity" />
-        <activity android:name=".ProgramStateViewActivity"></activity>
+        <activity android:name=".ProgramStateViewActivity" />
+        <activity android:name=".AddFeedbackActivity" />
+        <activity android:name=".ProgramDistrictViewActivity"></activity>
     </application>
 
 </manifest>
