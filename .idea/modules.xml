@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:/Users/praji/Desktop/Android/Sih18/MohwNew/MoHFW.iml" filepath="C:/Users/praji/Desktop/Android/Sih18/MohwNew/MoHFW.iml" />
-      <module fileurl="file://C:/Users/praji/Desktop/Android/Sih18/MohwNew/.idea/Mohfw.iml" filepath="C:/Users/praji/Desktop/Android/Sih18/MohwNew/.idea/Mohfw.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MohwNew.iml" filepath="$PROJECT_DIR$/MohwNew.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../praji/Desktop/Android/Sih18/MohwNew/MoHFW.iml" filepath="$PROJECT_DIR$/../../../praji/Desktop/Android/Sih18/MohwNew/MoHFW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mohfw.iml" filepath="$PROJECT_DIR$/Mohfw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../praji/Desktop/Android/Sih18/MohwNew/.idea/Mohfw.iml" filepath="$PROJECT_DIR$/../../../praji/Desktop/Android/Sih18/MohwNew/.idea/Mohfw.iml" />
       <module fileurl="file://F:/praji/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" filepath="F:/praji/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MohwNew.iml" filepath="$PROJECT_DIR$/MohwNew.iml" />
       <module fileurl="file://F:/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" filepath="F:/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/MohwNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://F:/praji/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/app/app.iml" filepath="F:/praji/praji/Desktop/praji/Desktop/Android/Sih18/MohwNew/app/app.iml" />
