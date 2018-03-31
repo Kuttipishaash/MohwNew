@@ -47,10 +47,10 @@ public class DistrictProgramsActivity extends AppCompatActivity {
         mFirebaseDatabaseReference = mFirebaseDatabase.getReference("/states/" + mState + "/" + mDistrict + "/");
 
         districtProgramArrayList = new ArrayList<DistrictProgram>();
-        districtProgramArrayList.add(new DistrictProgram("pg1", "desc", false));
-        districtProgramArrayList.add(new DistrictProgram("pg2", "desc", true));
-        districtProgramArrayList.add(new DistrictProgram("pg3", "desc", false));
-        districtProgramArrayList.add(new DistrictProgram("pg4", "desc", true));
+        districtProgramArrayList.add(new DistrictProgram("National Vector Borne Disease Control Programme (NVBDCP)", "Directorate of National Vector Borne Disease Control Programme (NVBDCP) is the central nodal agency for the prevention and control of vector borne diseases i.e. Malaria, Dengue, Lymphatic Filariasis, Kala-azar, Japanese Encephalitis and Chikungunya in India. It is one of the Technical Departments of Directorate General of Health Services, Government of India.", false));
+        districtProgramArrayList.add(new DistrictProgram("India Newborn Action Plan (INAP)", "The programme expands the scope of adolescent health programming in India - from being limited to sexual and reproductive health, it now includes in its ambit nutrition, injuries and violence (including gender based violence), non-communicable diseases, mental health and substance misuse. The strength of the program is its health promotion approach.", true));
+        districtProgramArrayList.add(new DistrictProgram("Rashtriya Bal Swasthya Karyakram (RBSK)", "Rashtriya Bal Swasthya Karyakram (RBSK) is an important initiative aiming at early identification and early intervention for children from birth to 18 years to cover 4 ‘D’s viz. Defects at birth, Deficiencies, Diseases, Development delays including disability.", false));
+        districtProgramArrayList.add(new DistrictProgram("Rashtriya Kishor Swasthya Karyakram (RKSK)", "The programme expands the scope of adolescent health programming in India - from being limited to sexual and reproductive health, it now includes in its ambit nutrition, injuries and violence (including gender based violence), non-communicable diseases, mental health and substance misuse. The strength of the program is its health promotion approach.", true));
         districtProgramsAdapter = new DistrictProgramsAdapter(DistrictProgramsActivity.this, districtProgramArrayList);
         districtProgramsAdapter.setNotifyOnChange(true);
         mListView.setAdapter(districtProgramsAdapter);

@@ -1,8 +1,8 @@
 package com.hackit.mohwnew;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,6 +14,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hackit.mohwnew.Adapters.ProgramsAdapter;
+import com.hackit.mohwnew.Data.Program;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,8 +37,8 @@ public class ProgramsViewActivity extends AppCompatActivity {
 
         programList = new ArrayList<Program>();
         programIds = new ArrayList<String>();
-        mProgramsList = (ListView) findViewById(R.id.list_view_programs);
-        mProgressBar = (ProgressBar) findViewById(R.id.progress_view_programs);
+        mProgramsList = findViewById(R.id.list_view_programs);
+        mProgressBar = findViewById(R.id.progress_view_programs);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("programs");
         databaseReference.keepSynced(true);

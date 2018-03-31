@@ -1,4 +1,4 @@
-package com.hackit.mohwnew;
+package com.hackit.mohwnew.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.hackit.mohwnew.Data.Program;
+import com.hackit.mohwnew.R;
+
 import java.util.List;
 
 /**
@@ -26,12 +30,12 @@ public class ProgramsAdapter extends ArrayAdapter<Program> {
             view = ((Activity) getContext()).getLayoutInflater().inflate(R.layout.item_program, parent, false);
         }
 
-        TextView mTitle = (TextView) view.findViewById(R.id.text_program_title);
-        TextView mUnder = (TextView) view.findViewById(R.id.text_program_under);
-        TextView mDescription = (TextView) view.findViewById(R.id.text_program_desc);
-        TextView mCompleted = (TextView) view.findViewById(R.id.text_program_completed);
-        TextView mCompletionRate = (TextView) view.findViewById(R.id.text_program_completion_rate);
-        TextView mTotal = (TextView) view.findViewById(R.id.text_program_total);
+        TextView mTitle = view.findViewById(R.id.text_program_title);
+        TextView mUnder = view.findViewById(R.id.text_program_under);
+        TextView mDescription = view.findViewById(R.id.text_program_desc);
+        TextView mCompleted = view.findViewById(R.id.text_program_completed);
+        TextView mCompletionRate = view.findViewById(R.id.text_program_completion_rate);
+        TextView mTotal = view.findViewById(R.id.text_program_total);
 
         Program program = getItem(position);
 

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".FeedBack">
+    tools:context=".IssuesActivity">
 
     <ScrollView
         android:layout_weight="6"
@@ -36,6 +33,7 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -82,6 +80,8 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg2"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -128,6 +128,7 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -174,6 +175,8 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg4"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -220,6 +223,8 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg5"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -266,6 +271,8 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg6"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -312,6 +319,8 @@
                 android:textSize="18sp" />
 
             <RadioGroup
+                android:id="@+id/t1rg7"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -336,16 +345,162 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Prabhashankar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/t8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:paddingBottom="15dp"
+                android:text="        Question 8 : "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/t8q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="    What is your name bro? "
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/t1rg8"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <RadioButton
+                    android:id="@+id/t8r1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Alfin" />
+
+                <RadioButton
+                    android:id="@+id/t8r2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sneha" />
+
+                <RadioButton
+                    android:id="@+id/t8r3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Prabhashankar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/t9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:paddingBottom="15dp"
+                android:text="        Question 9 : "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/t9q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="    What is your name bro? "
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/t1rg9"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <RadioButton
+                    android:id="@+id/t9r1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Alfin" />
+
+                <RadioButton
+                    android:id="@+id/t9r2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sneha" />
+
+                <RadioButton
+                    android:id="@+id/t9r3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Prabhashankar" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/t10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:paddingBottom="15dp"
+                android:text="        Question 10 : "
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/t10q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/darker_gray"
+                android:text="    What is your name bro? "
+                android:textSize="18sp" />
+
+            <RadioGroup
+                android:id="@+id/t1rg10"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <RadioButton
+                    android:id="@+id/t10r1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Alfin" />
+
+                <RadioButton
+                    android:id="@+id/t10r2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sneha" />
+
+                <RadioButton
+                    android:id="@+id/t10r3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Prabhashankar" />
 
             </RadioGroup>
         </LinearLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_submit_afb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_weight="1"
         android:background="@android:color/holo_red_light"
         android:text="Submit" />

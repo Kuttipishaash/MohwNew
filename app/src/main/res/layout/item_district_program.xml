@@ -8,27 +8,24 @@
         android:id="@+id/cb_program_status_adpli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Completed"
-        android:textColor="@color/colorPrimaryDark" />
+        android:text="Completed" />
 
     <TextView
         android:id="@+id/tv_title_adpli"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:text="Title"
+        android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark" />
 
     <TextView
+        android:layout_height="wrap_content"
         android:id="@+id/tv_desc_adpli"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:textColor="@color/colorPrimaryDark" />
+        android:text="Description" />
 
     <TextView
         android:id="@+id/tv_complete_percent_adpli"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:textColor="@color/colorPrimaryDark" />
+        android:layout_height="wrap_content" />
 </LinearLayout>
