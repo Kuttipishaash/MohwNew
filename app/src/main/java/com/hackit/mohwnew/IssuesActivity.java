@@ -231,7 +231,7 @@ public class IssuesActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 for (int i = 0; i < 10; i++) {
-                    Log.e("FeedbackActivity", "Answer of qstn " + i + 1 + " is : " + issues[i]);
+                    Log.e("FeedbackActivity", "Answer of qstn " + (i + 1) + " is : " + issues[i]);
                 }
             }
         });
