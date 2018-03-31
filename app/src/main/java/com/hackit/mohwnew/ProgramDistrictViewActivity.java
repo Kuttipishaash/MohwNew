@@ -41,6 +41,7 @@ public class ProgramDistrictViewActivity extends AppCompatActivity {
                 String district = districtsList.get(position);
                 Intent intent = new Intent(ProgramDistrictViewActivity.this, IssuesActivity.class);
                 intent.putExtra("district", district);
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
         });

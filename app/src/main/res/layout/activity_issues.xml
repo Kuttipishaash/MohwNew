@@ -45,7 +45,7 @@
                 android:id="@+id/t1q"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Newsborn visits on first day of birth"
+                android:text="Does the child have difficulty in hearing?"
                 android:textSize="18sp" />
 
             <RadioGroup
@@ -60,21 +60,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t1r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t1r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -94,7 +94,7 @@
                 android:id="@+id/t2q"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Promoting immunisation"
+                android:text="Does the child have reduced strength in his/her arms or legs?"
                 android:textSize="18sp" />
 
             <RadioGroup
@@ -110,21 +110,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t2r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t2r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -160,21 +160,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t3r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t3r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -210,21 +210,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t4r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t4r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -260,21 +260,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t5r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t5r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -310,21 +310,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t6r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t6r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="4-5" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -360,21 +360,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="1-2" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t7r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="2-4" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t7r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Prabhashankar" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -410,21 +410,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Alfin" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t8r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sneha" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t8r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Prabhashankar" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -460,21 +460,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Alfin" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t9r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sneha" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t9r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Prabhashankar" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
             <View
@@ -510,21 +510,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Alfin" />
+                    android:text="Yes" />
 
                 <RadioButton
                     android:id="@+id/t10r2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sneha" />
+                    android:text="No" />
 
                 <RadioButton
                     android:id="@+id/t10r3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Prabhashankar" />
+                    android:text="Sometimes" />
 
             </RadioGroup>
         </LinearLayout>
